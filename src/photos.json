@@ -1,0 +1,144 @@
+{
+  "hero": {
+    "file": "outdoor-bar",
+    "widths": [
+      480,
+      960,
+      1200
+    ],
+    "width": 1200,
+    "height": 900,
+    "position": "50% 50%",
+    "alt": "Jaiden welcomes guests from behind an outdoor wedding bar decorated with flowers, string lights and a Mr & Mrs sign",
+    "source": "0a770b_ccc433161b8d44bb80c14cfcf8491816~mv2.png"
+  },
+  "mobile": {
+    "file": "mobile-bar-team",
+    "widths": [
+      480,
+      960,
+      1200
+    ],
+    "width": 1200,
+    "height": 1210,
+    "position": "50% 43%",
+    "alt": "Two bartenders stand inside a white mobile bar with a black counter, flowers and a framed drinks menu",
+    "source": "0a770b_b475342663ab42bd88a51268fe0027d1~mv2.png"
+  },
+  "team": {
+    "file": "event-team",
+    "widths": [
+      480,
+      960
+    ],
+    "width": 1050,
+    "height": 1400,
+    "position": "50% 45%",
+    "alt": "Jimmy and Candace behind an indoor event bar with beverage dispensers and a drinks sign",
+    "source": "0a770b_f7086d891ac444679e4cd8a30d51d1fc~mv2.png"
+  },
+  "candace": {
+    "file": "candace",
+    "widths": [
+      480,
+      960
+    ],
+    "width": 1050,
+    "height": 1400,
+    "position": "50% 30%",
+    "alt": "Candace, lead bartender",
+    "source": "0a770b_d4b09565c1314882b6d4556fc0669aba~mv2.png"
+  },
+  "nevaeh": {
+    "file": "nevaeh",
+    "widths": [
+      480,
+      960
+    ],
+    "width": 1049,
+    "height": 1400,
+    "position": "50% 30%",
+    "alt": "Nevaeh, bartender",
+    "source": "0a770b_173eab9572bb47d0ac254367c588e5c5~mv2.png"
+  },
+  "jimmy": {
+    "file": "jimmy",
+    "widths": [
+      480
+    ],
+    "width": 828,
+    "height": 1097,
+    "position": "50% 30%",
+    "alt": "Jimmy, bartender",
+    "source": "0a770b_97c862896eb949a28f9c68ab43605f42~mv2.png"
+  },
+  "emily": {
+    "file": "emily",
+    "widths": [
+      480
+    ],
+    "width": 799,
+    "height": 1400,
+    "position": "50% 30%",
+    "alt": "Emily, bartender",
+    "source": "0a770b_9bdc5603e90947799e5da13a81ecd621~mv2.jpg"
+  },
+  "brandi": {
+    "file": "brandi",
+    "widths": [
+      480,
+      960
+    ],
+    "width": 1057,
+    "height": 1400,
+    "position": "50% 30%",
+    "alt": "Brandi, bartender",
+    "source": "0a770b_429c4458329643d09a4f0464be24feeb~mv2.png"
+  },
+  "jennifer": {
+    "file": "jennifer",
+    "widths": [
+      480,
+      960
+    ],
+    "width": 1049,
+    "height": 1400,
+    "position": "50% 30%",
+    "alt": "Jennifer, bartender",
+    "source": "0a770b_a369d00fafba44c8b64e149a3287dbe2~mv2.png"
+  },
+  "maddie": {
+    "file": "maddie",
+    "widths": [
+      480
+    ],
+    "width": 585,
+    "height": 438,
+    "position": "50% 40%",
+    "alt": "Maddie, bartender",
+    "source": "0a770b_7ef3849f7201473a81f30b2c3001702d~mv2.jpg"
+  },
+  "jaiden": {
+    "file": "jaiden",
+    "widths": [
+      480
+    ],
+    "width": 933,
+    "height": 1400,
+    "position": "50% 30%",
+    "alt": "Jaiden, bartender",
+    "source": "0a770b_e8c0e5c6ce8d4a0291e3b0652191aed6~mv2.jpg"
+  },
+  "jamie": {
+    "file": "jamie",
+    "widths": [
+      480,
+      960
+    ],
+    "width": 1145,
+    "height": 1374,
+    "position": "50% 30%",
+    "alt": "Jamie, bartender",
+    "source": "0a770b_064902c77206496e8f9bfd14ef9b8829~mv2.png"
+  }
+}
