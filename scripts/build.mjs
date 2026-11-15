@@ -8,7 +8,8 @@ const pages = [
  ['about','about','About | I Do Bar Co.','Meet Christyn and discover the next chapter of Buckeye Bartending Services as I Do Bar Co.'],
  ['services','blank','Bar Service Add-On Options | I Do Bar Co.','Explore professional bartending and flexible bar add-on options. You provide the alcohol; ask us about beverage service supplies for your event.'],
  ['team','team-members','Meet Our Team | I Do Bar Co.','Meet the I Do Bar Co. bartending team serving weddings and special events throughout Central Ohio.'],
- ['venues','blank-5','Partnered Venues | I Do Bar Co.','Talk with I Do Bar Co. about bartending service at your Central Ohio wedding or event venue.']
+ ['venues','blank-5','Partnered Venues | I Do Bar Co.','Talk with I Do Bar Co. about bartending service at your Central Ohio wedding or event venue.'],
+ ['thanks','thank-you','Inquiry | I Do Bar Co.','Contact I Do Bar Co. about your event.']
 ];
 for (const [name, route, title, description] of pages) {
  let body = await readFile(`src/pages/${name}.html`,'utf8');
@@ -24,4 +25,4 @@ for (const [name, route, title, description] of pages) {
  const dir=`public/${route}`;await mkdir(dir,{recursive:true});await writeFile(`${dir}/index.html`,html);
 }
 await writeFile('public/404.html',`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found | I Do Bar Co.</title><link rel="stylesheet" href="/styles.css"><main class="wrap page-intro"><p class="eyebrow">I Do Bar Co.</p><h1>Page not found</h1><p>We couldn’t find that page.</p><a class="button" href="/">Back to Home</a></main></html>`);
-console.log('Built five pages from src/pages and src/photos.json.');
+console.log('Built six pages from src/pages and src/photos.json.');

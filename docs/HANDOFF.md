@@ -1,6 +1,6 @@
 # I Do Bar Co. local redesign
 
-Implemented November 13, 2026; revised using the owner-supplied logo. Nothing published, pushed, or submitted to the business.
+Implemented November 13, 2026; revised using the owner-supplied logo. Source has been pushed to GitHub. Netlify Forms integration was added November 15, 2026; hosting, form detection, and notification delivery require Netlify-side verification. No live inquiry was submitted.
 
 ## Preview and source
 
@@ -44,7 +44,7 @@ Published sources support Central Ohio, weddings/private parties/corporate event
 
 The existing add-on graphic is titled `Bar Packages 2027`; its page says prices take effect January 2027 and may change without notice. As of this November 2026 review, the redesign requests a current quote rather than presenting those future prices as current. Its verified supply categories and terms were converted to readable text.
 
-Inquiry fields prepare an email addressed to `Buckeyebartendingohio@gmail.com`; `740-707-1821` is the published phone. Required name/email validation precedes a local review step. Open Email App requires the visitor to send from their own app. Copy Inquiry provides a fallback, including a manual-copy message when clipboard access fails. Edit Details preserves entries. There is no POST, no fetch, no storage, no fake delivery confirmation, and no live test was sent. Without JavaScript, the form stays hidden and direct email/phone links remain usable. Inquiry text is not placed in a URL until the visitor follows the mailto link. Long drafts or missing email handlers can fail, so the copy/direct-contact alternatives remain visible.
+The inquiry now submits to Netlify Forms as `bar-inquiry`. Static HTML has `data-netlify="true"`, POST to `/thank-you/`, a matching hidden `form-name`, and a hidden `bot-field` honeypot. Native name/email validation runs before JavaScript submission; form entries remain in place on failure, the send control is disabled while pending, duplicate clicks are ignored, and the status message receives focus. Only a successful server response triggers reset and success. Native POST works without JavaScript on Netlify. Local preview prevents AJAX submission and displays an explicit nothing-sent message; its server rejects native POST with 405. Direct email and phone remain available. Netlify form detection and notifications still require dashboard setup; see `docs/NETLIFY-FORMS.md`. No real submission or email delivery has been verified.
 
 ## Photography used and approval status
 
@@ -72,7 +72,7 @@ Do not add stock or generated substitutes for any of these.
 ## Launch items and unresolved details
 
 1. Approve reuse of the three recovered event photos and nine team portraits, permissions/credits, logo placement, and crop choices. The source file for Jennifer is named `Neveah Pic.heic`; it is mapped to Jennifer because of its placement in the original team page. Verify this identity and current roster explicitly.
-2. Confirm the published email and phone are still the correct I Do Bar Co. inquiry channels. Decide whether the email-preparation flow is final or supply a verified form/CRM integration. A server-based inquiry form has not been connected. If adding one, verify real delivery with the owner at launch, not a silent test now.
+2. Confirm the published email and phone are still correct. Enable Netlify form detection, deploy this revision, confirm `bar-inquiry` appears, and configure the notification recipient. Verify actual submission and notification delivery with the owner at launch; no live test has been sent.
 3. Confirm current service inclusions, staffing and supplies, equipment responsibility, venue requirements, travel boundaries beyond the published Central Ohio wording, add-on availability, and pricing effective for the intended launch date. No unconfirmed terms should be added.
 4. Confirm TIPS certification and insurance remain current at launch, current team roster and Christyn's biography, and any named partnered venues/permission to show their branding. No named venues are currently advertised.
 5. Supply any approved testimonials if desired; none are needed for this layout.
@@ -82,8 +82,8 @@ Do not add stock or generated substitutes for any of these.
 
 ## Verification results and remaining browser QA
 
-Passed `npm run check`: six HTML outputs (five content pages plus 404), internal file links and hash targets, every declared responsive photo variant, meaningful image alt text and dimensions, inquiry invalid/review/edit transitions, correctly encoded mailto, clipboard success/failure behavior, and WCAG AA body/muted/footer/placeholder contrast calculations. JavaScript syntax passed Node checks. Local homepage returned HTTP 200. Entire image derivative set is approximately 1.37 MB; a page loads only the selected variants.
+Passed `npm run check`: seven HTML outputs (six content/confirmation pages plus 404), internal file links and hash targets, responsive photo variants, image alt text/dimensions, Netlify detection markup and field schema, required validation, localhost guard, pending/duplicate submission, encoded payload, mocked success, HTTP/network errors, retry, focus, and text contrast. No live request was made by these tests.
 
-Interaction checks run against a small DOM fixture and do not establish browser rendering or native validation behavior. Native browser automation failed: one Chrome target was minimized; the other could not determine the current browser URL with enough confidence to enforce policy. Browser control ended. No desktop/mobile screenshots or visual layout, real focus traversal, native email-app launch, or browser form states were verified; do not represent them as passed.
+November 15 desktop typography update: body copy is 17px, navigation/buttons/labels are 15px, and secondary copy is 14px above 700px. Headings, the supplied logo, and all established brand phrases are unchanged. Flexible navigation and footer layouts allow the larger text to wrap.
 
-Before launch, inspect at 320, 390, 768, and 1440px: no horizontal overflow, readable hero text, full phone hero image, center-preserving gallery crops, comfortable nav/CTA targets, visible Tab/Shift+Tab focus, Enter/Space FAQ operation, every navigation/CTA link, invalid required/email/date/guest inputs, draft review/edit/copy and clipboard failure, email-handler fallback, and no-JavaScript direct contact. Open all supporting pages. Test form UI without clicking Open Email App or sending an inquiry. The header intentionally wraps on narrow screens rather than hiding navigation behind a JS menu.
+Browser rendering and a full keyboard walkthrough remain unverified: the previous native browser control attempt could not determine the Chrome URL with enough confidence to enforce policy. Inspect at 320, 390, 768, and 1440px before final launch: no overflow, comfortable larger text, nav wrapping, photo crops, form validation and status focus, native POST fallback, disabled/pending state, and preserved fields after failure. Use mocked responses for UI testing; do not send a live inquiry without explicit authorization.

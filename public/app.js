@@ -1,34 +1,43 @@
-const form = document.querySelector('#inquiry-form');
+﻿const form = document.querySelector('#inquiry-form');
 if (form) {
-  form.hidden = false;
-  const review = document.querySelector('#email-review');
-  const preview = document.querySelector('#inquiry-preview');
-  const draft = document.querySelector('#email-draft');
-  const status = document.querySelector('#copy-status');
-  form.addEventListener('submit', event => {
+  const result = document.querySelector('#form-result');
+  const submit = form.querySelector('button[type="submit"]');
+  let submitting = false;
+  const announce = (message, state) => {
+    result.textContent = message;
+    result.dataset.state = state;
+    result.focus();
+  };
+  form.addEventListener('submit', async event => {
     event.preventDefault();
-    if (!form.reportValidity()) return;
-    const data = new FormData(form);
-    const get = key => String(data.get(key) || '').trim();
-    const body = `Hello I Do Bar Co.,\n\nI’d love to ask about availability and bar service.\n\nName: ${get('name')}\nEmail: ${get('email')}\nEvent date: ${get('date') || 'Still deciding'}\nEstimated guests: ${get('guests') || 'Still deciding'}\nVenue / location: ${get('venue') || 'Still deciding'}\n\n${get('message')}\n\nThank you!`;
-    preview.textContent = body;
-    draft.href = `mailto:Buckeyebartendingohio@gmail.com?subject=${encodeURIComponent('Bar service inquiry' + (get('date') ? ' · ' + get('date') : ''))}&body=${encodeURIComponent(body)}`;
-    status.textContent = '';
-    form.hidden = true;
-    review.hidden = false;
-    review.focus();
-  });
-  document.querySelector('#edit-inquiry').addEventListener('click', () => {
-    review.hidden = true;
-    form.hidden = false;
-    form.querySelector('input').focus();
-  });
-  document.querySelector('#copy-inquiry').addEventListener('click', async () => {
+    if (submitting || !form.reportValidity()) return;
+    // The static development server cannot process Netlify Forms.
+    if (['localhost', '127.0.0.1', '[::1]'].includes(location.hostname) || location.hostname.endsWith('.localhost')) {
+      announce('This local preview cannot send inquiries. Please use the deployed website, email Buckeyebartendingohio@gmail.com, or call 740-707-1821. Nothing has been sent.', 'error');
+      return;
+    }
+    submitting = true;
+    submit.disabled = true;
+    submit.textContent = 'Sending...';
+    form.setAttribute('aria-busy', 'true');
+    result.dataset.state = 'pending';
+    result.textContent = 'Sending your inquiry...';
     try {
-      await navigator.clipboard.writeText(preview.textContent);
-      status.textContent = 'Copied. Paste into your email app, review, and send.';
+      const response = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      });
+      if (!response.ok) throw new Error('Submission not confirmed');
+      form.reset();
+      announce('Thank you! Your inquiry has been received. Your date is not reserved until booking is confirmed.', 'success');
     } catch {
-      status.textContent = 'Copy is unavailable here. Select the inquiry text above and copy it manually.';
+      announce('We could not confirm your inquiry was received. Your details are still here. Please try again, email Buckeyebartendingohio@gmail.com, or call 740-707-1821.', 'error');
+    } finally {
+      submitting = false;
+      submit.disabled = false;
+      submit.textContent = 'Send Inquiry';
+      form.removeAttribute('aria-busy');
     }
   });
 }

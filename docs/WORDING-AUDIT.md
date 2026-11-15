@@ -35,7 +35,7 @@ The supplied original PNG is preserved byte for byte at `public/assets/i-do-bar-
 
 ## Content that remains an interface addition
 
-“Event Photos,” “View the Gallery,” FAQ questions, photo alt text/captions, sister-brand link, and email-preparation controls are descriptive interface text, not replacement brand slogans. The inquiry workflow still accurately explains that the visitor must send the prepared email. The add-on page retains readable supply categories and summary terms; future-effective January 2027 pricing remains a launch confirmation rather than a new/current price claim.
+“Event Photos,” “View the Gallery,” FAQ questions, photo alt text/captions, sister-brand link, and inquiry submission controls are descriptive interface text, not replacement brand slogans. As requested on November 15, the inquiry now submits directly through Netlify Forms. The functional control is labeled Send Inquiry; existing brand phrases and logo are unchanged. The add-on page retains readable supply categories and summary terms; future-effective January 2027 pricing remains a launch confirmation rather than a new/current price claim.
 
 Wix/Purement placeholder paragraphs, generic gallery captions, “Purement moments,” and the incorrect template copyright remain excluded. These describe the Wix template, not the client's branding.
 
