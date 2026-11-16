@@ -63,5 +63,5 @@ for(const respond of [async()=>({ok:false}),async()=>{throw Error('Offline');}])
 // WCAG relative luminance check for the actual body, muted copy, and button colors.
 const luminance=hex=>{const rgb=hex.match(/\w\w/g).map(v=>parseInt(v,16)/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4);return rgb[0]*.2126+rgb[1]*.7152+rgb[2]*.0722;};
 const contrast=(a,b)=>{const values=[luminance(a),luminance(b)].sort((a,b)=>b-a);return(values[0]+.05)/(values[1]+.05);};
-for(const [a,b] of [['061d37','F8F4EC'],['d9e0e6','061d37'],['2A201B','F8F4EC'],['62574f','eee6db'],['d3c5b8','2A201B'],['71645a','F8F4EC']])assert(contrast(a,b)>=4.5,`Contrast ${a}/${b}`);
+for(const [a,b] of [['061d37','ffffff'],['d9e0e6','061d37'],['243b4b','ffffff'],['4a6172','edf2f5'],['4a6172','ffffff']])assert(contrast(a,b)>=4.5,`Contrast ${a}/${b}`);
 console.log(`Passed: ${pages.length} pages, local links and anchors, photo variants, alt text, Netlify form detection markup, inquiry validation/local/pending/duplicate/success/error/retry behavior, and text contrast. No live inquiry sent.`);

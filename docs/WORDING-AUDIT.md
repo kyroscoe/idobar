@@ -40,3 +40,7 @@ The supplied original PNG is preserved byte for byte at `public/assets/i-do-bar-
 Wix/Purement placeholder paragraphs, generic gallery captions, “Purement moments,” and the incorrect template copyright remain excluded. These describe the Wix template, not the client's branding.
 
 The site retains the redesigned palette, spacing, page layout, and photo choices. The website has not been published. This audit supersedes earlier handoff descriptions of rewritten About summaries, newly created marketing headlines, or renamed navigation.
+
+## Customer-directed identity revision, November 16
+
+The customer's latest instruction explicitly requests Buckeye Bartending Services in multiple visible locations because clients do not yet recognize I Do Bar Co. The homepage title now leads with Buckeye Bartending Services, and shared header/footer plus section eyebrows repeat that name. The supplied I Do Bar Co. logo and existing phrases remain intact. This supersedes the earlier audit row describing I Do Bar Co. as the homepage heading. Tan styling and underlined arrow actions were replaced per the same feedback; button labels remain functional and do not introduce slogans.

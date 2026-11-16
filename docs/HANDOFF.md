@@ -14,7 +14,7 @@ The actual completed sister-brand source was found at `../ido/public/`, with its
 
 - Exact font families and available weights: EB Garamond 400/500 with italic, DM Sans 400/500/600. Font fallbacks work if Google Fonts is unavailable.
 - Shared patterns: compact horizontal navigation, 48px minimum primary buttons with a 3px radius, uppercase letter-spaced eyebrows, serif headings, generous sections, two-column desktop inquiry and stacked phone layouts, visible keyboard focus.
-- Sister source uses white, navy, and pale blue. The revised site takes navy from the supplied bar logo for buttons, headings, footer, and the story band, alongside the warm ivory, espresso body copy, bronze, and taupe base. Burgundy remains within the unaltered logo. No purple UI is used. Fonts and interaction patterns are shared with the sister brand.
+- Sister source uses white, navy, and pale blue. The revised site takes navy from the supplied bar logo for buttons, headings, footer, and the story band, alongside white backgrounds, pale-blue sections, and blue-gray body copy. The former tan/ivory/bronze UI palette was removed in the November 16 client revision. Burgundy remains within the unaltered logo. No purple UI is used. Fonts and interaction patterns are shared with the sister brand.
 - The owner-supplied official logo replaces the provisional wordmark in header/footer and supplies the favicon. Artwork, colors, proportions, and its white background are retained. The original PNG is preserved alongside small WebP display variants. No generated or recolored logo is used.
 
 ## Existing-site audit
@@ -87,3 +87,9 @@ Passed `npm run check`: seven HTML outputs (six content/confirmation pages plus 
 November 15 desktop typography update: body copy is 17px, navigation/buttons/labels are 15px, and secondary copy is 14px above 700px. Headings, the supplied logo, and all established brand phrases are unchanged. Flexible navigation and footer layouts allow the larger text to wrap.
 
 Browser rendering and a full keyboard walkthrough remain unverified: the previous native browser control attempt could not determine the Chrome URL with enough confidence to enforce policy. Inspect at 320, 390, 768, and 1440px before final launch: no overflow, comfortable larger text, nav wrapping, photo crops, form validation and status focus, native POST fallback, disabled/pending state, and preserved fields after failure. Use mocked responses for UI testing; do not send a live inquiry without explicit authorization.
+
+## November 16 customer revision
+
+Customer feedback requests stronger recognition of Buckeye Bartending Services, removal of tan, and buttons instead of underlined arrow actions. Buckeye Bartending Services is now the primary homepage heading, appears next to the unchanged I Do Bar Co. logo in shared navigation, and is repeated in homepage service, gallery, inquiry, supporting-page, and footer identity. The existing d/b/a relationship, official logo, LET'S CELEBRATE tagline, original service copy, and owner biographies are retained.
+
+All tan UI values were replaced with white, navy, pale blue, or blue-gray. Action links for galleries, About, bar options, inquiries, email, phone, footer inquiry, and sister brand use button styling. Directional arrow labels were removed. Contextual inline links, contact information, and ordinary navigation remain links. The larger desktop text and Netlify form integration are preserved. Source checks passed, including current palette contrast calculations. Desktop/mobile visual browser review remains outstanding.

@@ -1,6 +1,6 @@
 # I Do Bar Co.
 
-A local, photo-led redesign using the supplied official logo, its navy for framing and buttons, and warm ivory, espresso, bronze, and taupe neutrals. Static HTML/CSS/JS with no runtime dependencies, prepared for Netlify hosting.
+A photo-led redesign emphasizing Buckeye Bartending Services alongside the supplied I Do Bar Co. logo. White, navy, and pale-blue styling with button-based calls to action. Static HTML/CSS/JS with no runtime dependencies, prepared for Netlify hosting.
 
 ```sh
 npm run dev
